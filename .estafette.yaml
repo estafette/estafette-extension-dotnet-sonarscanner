@@ -1,0 +1,23 @@
+builder:
+  track: dev
+
+labels:
+  team: estafette-team
+  language: docker
+
+pipelines:
+  bake:
+    image: extensions/docker:dev
+    action: build
+    container: dotnet-sonarscanner
+    repositories:
+    - extensions
+
+  push-to-docker-hub:
+    image: extensions/docker:dev
+    action: push
+    container: dotnet-sonarscanner
+    repositories:
+    - extensions
+    tags:
+    - ${ESTAFETTE_GIT_BRANCH}
