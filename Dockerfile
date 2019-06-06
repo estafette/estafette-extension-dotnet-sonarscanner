@@ -1,8 +1,7 @@
 FROM mcr.microsoft.com/dotnet/core/sdk:2.1
 
-
-RUN apk --no-cache upgrade \
-    && apk add --no-cache \
+RUN apt-get update \
+    && apt-get install -y --no-install-recommends \
         default-jre \
     && apt-get clean \
     && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
