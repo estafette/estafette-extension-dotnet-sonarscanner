@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.1-alpine
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine
 
 RUN apk add openjdk8-jre
 RUN dotnet tool install -g dotnet-sonarscanner --version 4.6.2
