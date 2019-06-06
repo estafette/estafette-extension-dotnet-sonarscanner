@@ -1,8 +1,10 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine
+FROM mcr.microsoft.com/dotnet/core/sdk:2.2
 
 RUN apk --no-cache upgrade \
     && apk add --no-cache \
-        openjdk8-jre \
+        default-jre \
+    && apt-get clean \
+    && rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/* \
     && dotnet tool install -g dotnet-sonarscanner --version 4.6.2
 
 ENV PATH="/root/.dotnet/tools:${PATH}" \
