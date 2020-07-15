@@ -1,4 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:2.2-alpine
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 
 RUN apk --no-cache upgrade \
     && apk add --no-cache \
