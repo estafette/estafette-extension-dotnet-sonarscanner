@@ -3,7 +3,7 @@ FROM mcr.microsoft.com/dotnet/core/sdk:3.1-alpine
 RUN apk --no-cache upgrade \
     && apk add --no-cache \
         openjdk8-jre \
-    && dotnet tool install -g dotnet-sonarscanner --version 4.6.2
+    && dotnet tool install -g dotnet-sonarscanner --version 4.10.0
 
 ENV PATH="/root/.dotnet/tools:${PATH}" \
     ESTAFETTE_EXTENSION_PROJECT_KEY="" \
